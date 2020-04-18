@@ -1,0 +1,246 @@
+@import url(//db.onlinewebfonts.com/c/283be77c50dd99f9609a37bc04275a00?family=SKRODINA);
+@import url(//db.onlinewebfonts.com/c/6c02f15fdbc9dd7c482b52b06d8e0a6c?family=Super+Mario+256);
+
+@font-face {font-family: "SKRODINA"; src: url("//db.onlinewebfonts.com/t/283be77c50dd99f9609a37bc04275a00.eot"); src: url("//db.onlinewebfonts.com/t/283be77c50dd99f9609a37bc04275a00.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/283be77c50dd99f9609a37bc04275a00.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/283be77c50dd99f9609a37bc04275a00.woff") format("woff"), url("//db.onlinewebfonts.com/t/283be77c50dd99f9609a37bc04275a00.ttf") format("truetype"),url("//db.onlinewebfonts.com/t/283be77c50dd99f9609a37bc04275a00.svg#SKRODINA") format("svg");} 
+@font-face {font-family: "Super Mario 256"; src: url("//db.onlinewebfonts.com/t/6c02f15fdbc9dd7c482b52b06d8e0a6c.eot"); src: url("//db.onlinewebfonts.com/t/6c02f15fdbc9dd7c482b52b06d8e0a6c.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/6c02f15fdbc9dd7c482b52b06d8e0a6c.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/6c02f15fdbc9dd7c482b52b06d8e0a6c.woff") format("woff"), url("//db.onlinewebfonts.com/t/6c02f15fdbc9dd7c482b52b06d8e0a6c.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/6c02f15fdbc9dd7c482b52b06d8e0a6c.svg#Super Mario 256") format("svg"); } 
+
+
+#game section {
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    justify-content: space-around;
+    grid-template-areas: 
+    '. . . . . timer . . . . .'
+    'card1 . card2 . card3 . card4 . card5 . card6'
+    'card7 . card8 . card9 . card10 . card11 . card12'
+    'card13 . card14 . card15 . card16 . card17 . card18';
+    /* '. . . . . . . . . . .'; */
+}
+
+.card {
+    position: relative;
+    height: 140px;
+    width: 140px;
+    background-image: url('../images/mystery_box.gif');
+    background-size: contain;
+    background-position: center;
+    cursor: pointer;
+}
+
+
+@media only screen and (max-width: 1540px) {
+    #game section {
+        grid-template-areas: 
+        '. . . . timer . . . .'
+        'card1 . card2 . card3 . card4 . card5'
+        '. card6 . card7 . card8 . card9 .'
+        'card10 . card11 . card12 . card13 . card14'
+        '. card15 . card16 . card17 . card18 .';
+        /* '. . . . . . . . .'; */
+    }
+
+    .card {
+        height: 100px;
+        width: 100px;
+        
+    }
+}
+
+@media only screen and (max-width: 1180px) {
+    #game section {
+        grid-template-areas: 
+        '. . . timer . . .'
+        'card1 . card2 . card3 . card4'
+        '. card5 . card6 . card7 .'
+        'card8 . card9 . card10 . card11'
+        '. card12 . card13 . card14 .'
+        'card15 . card16 . card17 . card18';
+        /* '. . . . . . .'; */
+    }
+
+    .card {
+        height: 90px;
+        width: 90px;
+
+    }
+}
+
+@media only screen and (max-width: 1180px) and (max-height: 628px) {
+    #game section {
+        grid-template-areas: 
+        '. . . . . timer . . . . .'
+        'card1 . card2 . card3 . card4 . card5 . card6'
+        'card7 . card8 . card9 . card10 . card11 . card12'
+        'card13 . card14 . card15 . card16 . card17 . card18';
+    }
+
+    .card {
+        height: 90px;
+        width: 90px;
+    }
+}
+
+@media only screen and (max-width: 940px) {
+    #game section {
+        grid-template-areas: 
+        '. . . . . timer . . . . .'
+        'card1 . card2 . card3 . card4 . card5 . card6'
+        'card7 . card8 . card9 . card10 . card11 . card12'
+        'card13 . card14 . card15 . card16 . card17 . card18';
+        /* '. . . . .'; */
+    }
+
+    .card {
+        height: 68px;
+        width: 68px;
+    }
+}
+
+/* @media only screen and (max-width: 940px) {
+    #game section {
+        grid-template-areas: 
+        'card1 . card2 . card3 . card4'
+        '. card5 . card6 . card7 .'
+        'card8 . card9 . card10 . card11'
+        '. card12 . card13 . card14 .'
+        'card15 . card16 . card17 . card18'
+        '. . . . . .';
+    }
+} */
+
+@keyframes bounce {
+    from {
+      bottom: 0px;
+    }
+
+    25% {
+        bottom: 22px;
+    }
+  
+    50% {
+        bottom: 30px;
+    }
+
+    75% {
+        bottom: 22px;
+    }
+  
+    to {
+        bottom: 0px;
+    }
+  }
+
+
+.bouncing {
+    animation-duration: 0.2s;
+    animation-name: bounce;
+    animation-timing-function: cubic-bezier(0.25, 0.1, 0.75, 0.6);
+}
+
+#game button {
+    position: absolute;
+}
+
+
+#title {
+    background-image: url("../images/title.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50vh;
+}
+
+/* button {
+    margin: 3vh auto 0px auto;
+    text-align: center;
+}
+
+button:hover {
+    margin-top: 2.5vh;
+}
+
+button:active {
+    margin-top: 3.5vh;
+    padding: 0;
+} */
+
+.koopa_green {
+    background-image: url("../images/koopa_green.png");
+    cursor: default;
+
+}
+.koopa_red {
+    background-image: url("../images/koopa_red.png");
+    cursor: default;
+
+}
+.koopa_blue {
+    background-image: url("../images/koopa_blue.png");
+    cursor: default;
+}
+.koopa_magic {
+    background-image: url("../images/koopa_magic.png");
+    cursor: default;
+}
+
+.flower {
+    background-image: url("../images/flower.png");
+    cursor: default;
+}
+
+.star {
+    background-image: url("../images/star.png");
+    cursor: default;
+}
+
+.mushroom_green {
+    background-image: url("../images/mushroom_green.png");
+    cursor: default;
+}
+
+.mushroom_red {
+    background-image: url("../images/mushroom_red.png");
+    cursor: default;
+}
+
+.bowser {
+    background-image: url("../images/bowser.png");
+    cursor: default;
+}
+
+.highlight {
+    box-shadow: 0 0 5px 5px rgba(235, 253, 72, 0.8);
+    z-index: 2;
+}
+
+section#tutorial {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+section#tutorial :first-child {
+    font-size: 70px;
+    font-family: "Super Mario 256";
+    text-shadow:
+    -0.1vh -0.1vh 0 #000,
+    0.1vh -0.1vh 0 #000,
+    -0.1vh 0.1vh 0 #000,
+    0.1vh 0.1vh 0 #000;
+}
+
+section#tutorial :last-child {
+    margin-top: 80vh;
+    font-size: 40px;
+    font-family: "Super Mario 256";
+    text-shadow:
+    -0.1vh -0.1vh 0 #000,
+    0.1vh -0.1vh 0 #000,
+    -0.1vh 0.1vh 0 #000,
+    0.1vh 0.1vh 0 #000;
+}
+
+
+

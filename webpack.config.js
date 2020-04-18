@@ -3,7 +3,7 @@ const path = require("path");
 const webpack = require("webpack");
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: "./src/js/index.js",
   mode: "development",
   module: {
     rules: [
@@ -22,6 +22,9 @@ module.exports = {
         use: [
           {
             loader: 'file-loader',
+            options: {
+              esModule: false
+            }
           },
         ],
       }
@@ -35,9 +38,11 @@ module.exports = {
   },
   devServer: {
     contentBase: path.join(__dirname, "public/"),
+    host: '192.168.1.72',
     port: 3000,
     publicPath: "http://localhost:3000/dist/",
-    hotOnly: true
+    hotOnly: true,
+    disableHostCheck: true
   },
   plugins: [new webpack.HotModuleReplacementPlugin()]
 };

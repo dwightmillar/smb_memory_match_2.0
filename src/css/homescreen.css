@@ -1,0 +1,37 @@
+/* main {
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    flex: 1;
+
+    height: 50vh;
+    width: 100vw;
+    position: relative;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#title {
+    background-image: url("../images/title.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50vh;
+} */
+
+/* button {
+    margin: 3vh auto 0px auto;
+    text-align: center;
+}
+
+button:hover {
+    margin-top: 2.5vh;
+}
+
+button:active {
+    margin-top: 3.5vh;
+    padding: 0;
+} */

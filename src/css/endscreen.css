@@ -1,0 +1,39 @@
+#endscreen {
+    background-color: rgba(0, 0, 0, .2);
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    float: left;
+}
+
+#endscreen > div {
+    position: absolute;
+    z-index: 2;
+    top: 20%;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 700px;
+    height: 50vh;
+    background-color: peru;
+
+    font-size: 3vw;
+}
+
+table {
+    box-sizing: border-box;
+    height: 60%;
+    width: 100%;
+    padding: 0 150px;
+}
+
+
+table td {
+    width: 50%;
+    font-size: 25px;
+}
+
+#endscreen button {
+    position: relative;
+}
