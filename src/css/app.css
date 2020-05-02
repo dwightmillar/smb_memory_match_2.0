@@ -171,7 +171,7 @@ table *{
 /*desktop full-screen*/
 @media only screen and (max-width: 2000px) and (max-height: 1000px) {
     #title {
-        background-image: url("../images/title.png");
+        background-image: url("../images/title2.png");
         background-size: contain;
         background-repeat: no-repeat;
         background-position-y: center;
@@ -294,7 +294,7 @@ table *{
 /*desktop half-screen*/
 @media only screen and (max-width: 1000px) and (max-height: 1000px) {
     #title {
-        background-image: url("../images/title.png");
+        background-image: url("../images/title2.png");
         background-size: contain;
         background-repeat: no-repeat;
         background-position-y: center;
@@ -436,7 +436,7 @@ table *{
 /*desktop quarter-screen*/
 @media only screen and (max-width: 1000px) and (max-height: 500px) {
     #title {
-        background-image: url("../images/title.png");
+        background-image: url("../images/title2.png");
         background-size: contain;
         background-repeat: no-repeat;
         background-position-y: center;
@@ -591,7 +591,7 @@ table *{
 /*laptop full-screen*/
 @media only screen and (max-width: 1300px) and (max-height: 700px) {
     #title {
-        background-image: url("../images/title.png");
+        background-image: url("../images/title2.png");
         background-size: contain;
         background-repeat: no-repeat;
         background-position-y: center;
@@ -714,7 +714,7 @@ table *{
 /*laptop half-screen*/
 @media only screen and (max-width: 700px) and (max-height: 700px) {
     #title {
-        background-image: url("../images/title.png");
+        background-image: url("../images/title2.png");
         background-size: contain;
         background-repeat: no-repeat;
         background-position-y: center;
@@ -857,7 +857,7 @@ table *{
 @media only screen and (max-width: 1300px) and (max-height: 300px) {
 
     #title {
-        background-image: url("../images/title.png");
+        background-image: url("../images/title2.png");
         background-size: contain;
         background-repeat: no-repeat;
         background-position-y: center;
@@ -1012,7 +1012,7 @@ table *{
   @media only screen and (orientation: portrait) and (max-width: 500px) {
     
     #title {
-        background-image: url("../images/title.png");
+        background-image: url("../images/title2.png");
         background-size: contain;
         background-repeat: no-repeat;
         background-position-y: center;
@@ -1164,7 +1164,7 @@ table *{
 @media only screen and (max-width: 1000px) and (max-height: 500px) {
 
     #title {
-        background-image: url("../images/title.png");
+        background-image: url("../images/title2.png");
         background-size: contain;
         background-repeat: no-repeat;
         background-position-y: center;

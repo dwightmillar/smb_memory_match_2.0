@@ -1,12 +1,17 @@
-import React, { Component} from "react";
+
+import React, { Component, Fragment} from "react";
 import {hot} from "react-hot-loader";
 
-class Loading extends Component{
-    render() {
-        return (
-            <div style={{backgroundColor:'white',height:'100vh',width:'100vw'}} />
-        )
+class Title extends Component{
+    constructor(props) {
+      super(props);
     }
-}
-
-export default hot(module)(Loading);
+  
+    render() {
+      return(
+        <div id="loading" >LOADING...</div>
+      );
+    }
+  }
+  
+  export default hot(module)(Title);
