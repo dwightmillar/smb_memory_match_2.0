@@ -4,31 +4,25 @@ import {hot} from "react-hot-loader";
 class TimeEffect extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            float: ''
-        }
+        this.effect = React.createRef();
     }
+    
     componentDidMount() {
-        this.updateFloat = setTimeout(()=>this.setState({'float': 'floatUp'}), 50);
+        setTimeout( () => this.effect.current.className = 'floatUp', 1 );
     }
 
-    componentWillUnmount() {
-        clearTimeout(this.updateFloat);
-    }
 
     render() {
-        let effect = this.props.timeEffect;
+        let time = this.props.time;
         let color = 'lime';
-        if (effect < 0) {color = 'pink'}
-        let timeEffectPosition = this.props.timeEffectPosition;
-        if (this.state.float) {timeEffectPosition = this.state.float}
+        if (time < 0) {color = 'pink'}
 
-        if (effect > 0) {effect = '+' + effect;}
-        else if (effect == 0) {effect = '';}
+        if (time > 0) {time = '+' + time;}
+        else if (time == 0) {time = '';}
           
         return (
-            <div id="timeEffect" style={{color: color}} className={timeEffectPosition}>
-                {effect}
+            <div id="timeEffect" style={{color: color}} ref={this.effect}>
+                {time}
             </div>
         )
     }

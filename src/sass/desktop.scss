@@ -1,0 +1,525 @@
+@media only screen and (min-width: 1200px) {
+    @import url(//db.onlinewebfonts.com/c/283be77c50dd99f9609a37bc04275a00?family=SKRODINA);
+    @import url(//db.onlinewebfonts.com/c/6c02f15fdbc9dd7c482b52b06d8e0a6c?family=Super+Mario+256);
+
+    @font-face {font-family: "SKRODINA"; src: url("//db.onlinewebfonts.com/t/283be77c50dd99f9609a37bc04275a00.eot"); src: url("//db.onlinewebfonts.com/t/283be77c50dd99f9609a37bc04275a00.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/283be77c50dd99f9609a37bc04275a00.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/283be77c50dd99f9609a37bc04275a00.woff") format("woff"), url("//db.onlinewebfonts.com/t/283be77c50dd99f9609a37bc04275a00.ttf") format("truetype"),url("//db.onlinewebfonts.com/t/283be77c50dd99f9609a37bc04275a00.svg#SKRODINA") format("svg");} 
+    @font-face {font-family: "Super Mario 256"; src: url("//db.onlinewebfonts.com/t/6c02f15fdbc9dd7c482b52b06d8e0a6c.eot"); src: url("//db.onlinewebfonts.com/t/6c02f15fdbc9dd7c482b52b06d8e0a6c.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/6c02f15fdbc9dd7c482b52b06d8e0a6c.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/6c02f15fdbc9dd7c482b52b06d8e0a6c.woff") format("woff"), url("//db.onlinewebfonts.com/t/6c02f15fdbc9dd7c482b52b06d8e0a6c.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/6c02f15fdbc9dd7c482b52b06d8e0a6c.svg#Super Mario 256") format("svg"); } 
+
+
+/* =KEYFRAMES========================================================================================== */
+
+    /* EFFECTS */
+
+        /* BLINK */
+        
+        @-moz-keyframes blink
+        {  
+            0% { opacity: 0.0; }
+            49% { opacity: 0.0; }
+            50% { opacity: 1.0; }
+            100% { opacity: 1.0; }
+        }
+
+        @-webkit-keyframes blink
+        {  
+            0% { opacity: 0.0; }
+            49% { opacity: 0.0; }
+            50% { opacity: 1.0; }
+            100% { opacity: 1.0; }
+        }
+
+        @keyframes blink
+        {  
+            0% { opacity: 0.0; }
+            49% { opacity: 0.0; }
+            50% { opacity: 1.0; }
+            100% { opacity: 1.0; }
+        }
+
+    /* TRANSITIONS */
+
+        /* DROP */
+        $dropStartWidth: 100%; 
+        $dropEndWidth: 30%;
+        $dropStartHeight: 100%;
+        $dropEndHeight: 30%;
+
+        @-moz-keyframes drop
+        {  
+            0% {    
+                opacity: 0;
+                width: $dropStartWidth;
+                height: $dropStartHeight
+                }
+
+            100% {
+                opacity: 1;
+                width: $dropEndWidth;
+                height: $dropEndHeight;
+                }
+        }
+
+        @-webkit-keyframes drop
+        {  
+            0% {    
+                opacity: 0;
+                width: $dropStartWidth;
+                height: $dropStartHeight
+                }
+
+            100% {
+                opacity: 1;
+                width: $dropEndWidth;
+                height: $dropEndHeight;
+                }
+        }
+
+        @keyframes drop
+        {  
+            0% {    
+                opacity: 0;
+                width: $dropStartWidth;
+                height: $dropStartHeight
+                }
+
+            100% {
+                opacity: 1;
+                width: $dropEndWidth;
+                height: $dropEndHeight;
+                }
+        }
+
+        /* TYPING */
+        $typingWidth: 80%;
+
+        @-moz-keyframes typing
+        {  
+            from { width: 0% }
+            to { width: $typingWidth }
+        }
+
+        @-webkit-keyframes typing
+        {  
+            from { width: 0% }
+            to { width: $typingWidth }
+        }
+
+        @keyframes typing
+        {  
+            from { width: 0% }
+            to { width: $typingWidth }
+        }
+
+/* ==================================================================================================== */
+    /*=VARIABLES==============================*/
+        $defaultFont: "SKRODINA";
+
+        $backdrop: "../images/background.png";
+        $loading: "../images/mario.gif";
+    /*========================================*/
+
+
+    *
+    {
+        box-sizing: border-box;
+        font-family: $defaultFont;
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version, currently
+                            supported by Chrome, Opera and Firefox */
+    }
+
+    body
+    {
+        margin: 0;
+        overflow: hidden;
+    }
+
+    #backdrop
+    {
+        // position: absolute;
+        // top: 0;
+        // left: 0;
+        height: 100vh;
+        width: 100vw;
+
+        background-image: url($backdrop);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    #loading
+    {
+        height: 100%;
+        width: 100%;
+
+        padding-top: 15%;
+
+        background-image: url($loading);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 15%;
+
+        color: white;
+        text-align: center;
+        font-size: calc(30px);
+    }
+
+    #dialoguebox
+    {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        color: black;
+        padding: 5%;
+        z-index: 4;
+        
+        #dialogue
+        {
+            position: relative;
+            display: flex;
+            height: 70%;
+            width: 90%;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            padding: 10% 5%;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            text-align: center;
+
+            p
+            {
+                margin: auto;
+            }
+        }
+        #dialogue::after
+        {
+            content: '';
+            position: absolute;
+            height: 0;
+            width: 0;
+            border-bottom: 30px solid transparent;
+            border-left: 30px solid transparent;
+            border-right: 30px solid rgba(255, 255, 255, 0.8);
+            bottom: -30px;
+            left: 52%;
+        }
+        #speaker
+        {
+            position: absolute;
+            bottom: -37%;
+            left: 55%;
+            height: 40%;
+            width: 35%;
+            background-image: url("../images/toad.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+        }
+    }
+
+    #landing
+    {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        text-align: center;
+    }
+
+    #title
+    {
+        height: 100%;
+        width: 100%;
+        top: 12%;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+
+        background-image: url("../images/title2.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: bottom left;
+
+        opacity: 0;
+
+        #subtitle {
+            color: black;
+            bottom: -30%;
+            width: 80%;
+            left: 10%;
+            text-align: left;
+            font-size: 60px;
+        }
+    }
+
+    #overlay {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        z-index: 2;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        text-align: center;
+        font-size: 30px;
+        color: white;
+
+        #prompt {
+            bottom: 10vh;
+            position: absolute;
+            left: 0;
+            right: 0;
+            z-index: 3;
+            // width: 100vw;
+        }
+    }
+
+    #tutorial {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    #game {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        // align-items: stretch;
+
+        aside {
+            position: relative;
+            color: white;
+            font-size: 50px;
+            line-height: 140px;
+            background-color: rgba(0, 0, 0, .4);
+            flex: 5;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+
+            header {
+                // height: 12.5%;
+                // flex: 2;
+                text-align: center;
+                position: relative;
+    
+                #timer {
+                    height: 100%;
+                    width: 10%;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    margin: 0 auto;
+                    position: relative;
+                    line-height: 12vh;
+                    font-size: 9vh;
+
+                    #timeEffect {
+                        font-family: "Super Mario 256";
+                        font-size: 6vh;
+                        position: absolute;
+                        top: 4vh;
+                        left: 4vw;
+                    }
+                }
+            }
+
+            .matched::after {
+                content: '';
+                height: 140px;
+                width: 140px;
+                background-color: rgba(0, 0, 0, .4);
+                position: absolute;
+                top: 0px;
+                left: 0px;
+            }
+        }
+
+        
+
+        main {
+            flex: 8;
+            display: flex;
+            flex-direction: column;
+    
+            section {
+                flex: 8;
+                height: 62.5%;
+                width: 100%;
+                padding: 7%;
+                display: grid;
+                box-sizing: border-box;
+                justify-content: space-around;
+                grid-template-areas: 
+                'card1 . card2 . card3 . card4 . card5'
+                '. card6 . card7 . card8 . card9 .'
+                'card10 . card11 . card12 . card13 . card14'
+                '. card15 . card16 . card17 . card18 .';
+    
+                #card1{grid-area: card1;}
+                #card2{grid-area: card2;}
+                #card3{grid-area: card3;}
+                #card4{grid-area: card4;}
+                #card5{grid-area: card5;}
+                #card6{grid-area: card6;}
+                #card7{grid-area: card7;}
+                #card8{grid-area: card8;}
+                #card9{grid-area: card9;}
+                #card10{grid-area: card10;}
+                #card11{grid-area: card11;}
+                #card12{grid-area: card12;}
+                #card13{grid-area: card13;}
+                #card14{grid-area: card14;}
+                #card15{grid-area: card15;}
+                #card16{grid-area: card16;}
+                #card17{grid-area: card17;}
+                #card18{grid-area: card18;}
+            }
+
+            footer {
+                flex: 3;
+                height: 25%;
+            }
+        }
+        
+    }
+
+    .anchor {
+        position: relative;
+
+        > * {
+            position: absolute;
+        }
+    }
+
+    .row {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .no::after {
+        content: '';
+        height: 100%;
+        width: 100%;
+        background-color: transparent;
+        border-radius: 50%;
+        border: 12px solid red;
+        position: absolute;
+        top: -12px;
+        left: -12px;
+    }
+
+    .no::before {
+        content: '';
+        height: 12px;
+        width: 110%;
+        background-color: red;
+        position: absolute;
+        top: 48%;
+        left: -12px;
+        rotate: -45deg;
+    }
+
+    .hide {
+        // display: none !important;
+        visibility: hidden !important;
+    }
+
+    .darken {
+        background-color: rgba(0, 0, 0, .4) !important;
+        transition: background-color 1s linear;
+    }
+
+    .floatUp {
+        top: 1vh !important;
+        visibility: hidden !important;
+        transition: top 1s linear, visibility 0s 1s;
+    }
+
+    // .no-user-highlight {
+    //     -webkit-touch-callout: none; /* iOS Safari */
+    //     -webkit-user-select: none; /* Safari */
+    //     -khtml-user-select: none; /* Konqueror HTML */
+    //     -moz-user-select: none; /* Old versions of Firefox */
+    //     -ms-user-select: none; /* Internet Explorer/Edge */
+    //     user-select: none; /* Non-prefixed version, currently
+    //                         supported by Chrome, Opera and Firefox */
+    // }
+
+    .typing {
+        overflow: hidden; /* Ensures the content is not revealed until the animation */
+        white-space: nowrap; /* Keeps the content on a single line */
+        margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+        // letter-spacing: .15em; /* Adjust as needed */
+        animation: typing 0.13s steps(12, end);
+
+        // -webkit-animation-name: typing;
+        // -webkit-animation-duration: 0.3s;
+        // /* -webkit-animation-timing-function: linear; */
+        // -webkit-animation-iteration-count: 1;
+        // -webkit-animation-animation-fill-mode: forwards;
+
+
+        // -moz-animation-name: typing;
+        // -moz-animation-duration: 0.3s;
+        // /* -moz-animation-timing-function: linear; */
+        // -moz-animation-iteration-count: 1;
+        // -moz-animation-animation-fill-mode: forwards;
+
+
+        // animation-name: typing;
+        // animation-duration: 0.3s;
+        // /* animation-timing-function: linear; */
+        // animation-iteration-count: 1;
+        // animation-fill-mode: forwards;
+    }
+
+    .drop
+    {
+        -webkit-animation-name: drop;
+        -webkit-animation-duration: 0.3s;
+        /* -webkit-animation-timing-function: linear; */
+        -webkit-animation-iteration-count: 1;
+        -webkit-animation-animation-fill-mode: forwards;
+
+
+        -moz-animation-name: drop;
+        -moz-animation-duration: 0.3s;
+        /* -moz-animation-timing-function: linear; */
+        -moz-animation-iteration-count: 1;
+        -moz-animation-animation-fill-mode: forwards;
+
+
+        animation-name: drop;
+        animation-duration: 0.3s;
+        /* animation-timing-function: linear; */
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+    }
+
+    .blink
+    {
+        -webkit-animation-name: blink;
+        -webkit-animation-duration: 1.6s;
+        /* -webkit-animation-timing-function: linear; */
+        -webkit-animation-iteration-count: infinite;
+
+        -moz-animation-name: blink;
+        -moz-animation-duration: 1.6s;
+        /* -moz-animation-timing-function: linear; */
+        -moz-animation-iteration-count: infinite;
+
+        animation-name: blink;
+        animation-duration: 1.6s;
+        /* animation-timing-function: linear; */
+        animation-iteration-count: infinite;
+    }
+} 

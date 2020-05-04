@@ -1,25 +1,17 @@
 import React, { Component} from 'react';
 import {hot} from "react-hot-loader";
-import Reset from "./Reset.jsx";
 import '../../css/endscreen.css';
 import '../../css/gamescreen.css';
 
-class Endscreen extends Component {
+class ScoreTable extends Component {
     constructor(props) {
         super(props);
-        this.reset = this.reset.bind(this);
-    }
-
-    reset() {
-        this.props.playAgain(false);
     }
 
     render() {
-        if (this.props.tutorial.on) {
-            if (this.props.tutorial.step !== 5) {
-                return null;
-            }
-        }
+        // console.log('this.props.display: ',this.props.display);
+        // if (!this.props.display)
+        // return null;
 
         let matchCount = 0;
         matchCount += this.props.matches.length;
@@ -51,7 +43,6 @@ class Endscreen extends Component {
                                 </tr>
                                 </tbody>
                             </table>
-                            <Reset reset={this.reset}/>
                         </div>
                     </div>
                 )
@@ -77,7 +68,6 @@ class Endscreen extends Component {
                                 </tr>
                                 </tbody>
                             </table>
-                            <Reset reset={this.reset}/>
                         </div>
                     </div>
                 )
@@ -89,4 +79,4 @@ class Endscreen extends Component {
     }
 }
 
-export default hot(module)(Endscreen);
+export default hot(module)(ScoreTable);
